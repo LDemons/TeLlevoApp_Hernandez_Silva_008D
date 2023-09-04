@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="success"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registro Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registrate!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre: </ion-label>
+            <ion-input class="curvada" type="text" placeholder="Cachupin..."
+                      name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email: </ion-label>
+            <ion-input class="curvada" type="email" placeholder="cachupin@duocuc.cl"
+                        name="email" [(ngModel)]="usuario.email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Edad: </ion-label>
+            <ion-input class="curvada" type="number" placeholder="17" min="17" max="100"
+                        name="edad" [(ngModel)]="usuario.edad"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Password: </ion-label>
+            <ion-input class="curvada" type="password" placeholder="ColoColo1234"
+                        name="password" [(ngModel)]="usuario.password"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-select class="curvada" placeholder="Seleccione la jornada" [(ngModel)]="usuario.jornada">
+              <ion-select-option value="vespertino">Vespertino</ion-select-option>
+              <ion-select-option value="diurno">Diurno</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+        </ion-list>
+        <br>
+        <ion-button (click)="Enviar()" expand="block" fill="solid" color="success" shape="round">
+          Enviar
+        </ion-button>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

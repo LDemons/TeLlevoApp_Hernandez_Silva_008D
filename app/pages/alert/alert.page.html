@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="success"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="letra">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card-content>
+    <form>
+      <ion-list>
+
+        <ion-item>
+          <ion-label position="floating" class="letra">Email: </ion-label>
+          <ion-input class="curvada" type="email" placeholder="cachupin@duocuc.cl"
+                      name="email" [(ngModel)]="usuario.email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="letra" position="floating">Password: </ion-label>
+          <ion-input class="curvada" type="password" placeholder="ColoColo1234"
+                      name="password" [(ngModel)]="usuario.password"></ion-input>
+        </ion-item>
+        
+      </ion-list>
+
+      <br>
+
+      <ion-button (click)="EnviarLogin()" routerLink="/inicio" expand="block" fill="solid" color="success" shape="round">
+        Login
+      </ion-button>
+
+    </form>
+  </ion-card-content>
+
+</ion-content>
